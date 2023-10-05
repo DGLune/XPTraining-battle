@@ -1,6 +1,7 @@
 package be.cegeka.battle;
 
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -40,7 +41,18 @@ class SoldierTest {
     void construction_aSoldierMustHaveADefaultWeapon_mustBeBareFist() {
         Soldier soldier = new Soldier("soldier");
 
-        assertThat(soldier.getWeapon().getWeaponType()).isEqualTo(WeaponType.BAREFISTS);
+        assertThat(soldier.getWeapon()).isEqualTo(Weapon.BAREFISTS);
+    }
+
+    @Test
+    void attack_given2Soldiers_thenSoldierWithStrongestWeaponWins() {
+        Soldier winner = new Soldier("The winner", Weapon.AXE);
+        Soldier loser = new Soldier("The loser");
+
+        Soldier actual = winner.attack(loser);
+
+        Assertions.assertThat(actual).isEqualTo(winner);
+
     }
 
 }
