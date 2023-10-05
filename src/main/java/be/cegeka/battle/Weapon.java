@@ -1,14 +1,13 @@
 package be.cegeka.battle;
 
-public abstract class Weapon {
-    private WeaponType weapon;
-    private final int damage;
+public class Weapon {
+    private final WeaponType weapon;
 
-    public Weapon(int damage) {
-        this.damage = damage;
+    public Weapon(WeaponType weapon) {
+        this.weapon = weapon;
     }
 
     public WeaponType getWeaponType() {
-        return null;
+        return weapon;
     }
 }

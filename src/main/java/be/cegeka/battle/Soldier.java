@@ -6,6 +6,7 @@ import com.google.common.base.Strings;
 public class Soldier {
 
     private final String name;
+    private Weapon weapon;
 
 
     public Soldier(String name) {
@@ -13,6 +14,7 @@ public class Soldier {
             throw new IllegalArgumentException("A soldier must have a name");
         }
         this.name = name;
+        this.weapon = new Weapon(WeaponType.BAREFISTS);
     }
 
     String getName() {
@@ -20,6 +22,6 @@ public class Soldier {
     }
 
     public Weapon getWeapon() {
-        return null;
+        return weapon;
     }
 }

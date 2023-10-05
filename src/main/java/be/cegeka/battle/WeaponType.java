@@ -1,5 +1,5 @@
 package be.cegeka.battle;
 
 public enum WeaponType {
-    BAREFISTS
+    AXE, SWORD, SPEAR, BAREFISTS
 }
