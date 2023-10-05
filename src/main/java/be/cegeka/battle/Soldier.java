@@ -30,7 +30,8 @@ public class Soldier {
         return weapon;
     }
 
-    public Soldier attack(Soldier loser) {
-        return null;
+    public Soldier fight(Soldier soldier) {
+        if (this.weapon.getDamage() > soldier.weapon.getDamage()) return this;
+        return soldier;
     }
 }

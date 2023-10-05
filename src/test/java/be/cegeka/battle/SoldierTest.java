@@ -49,9 +49,20 @@ class SoldierTest {
         Soldier winner = new Soldier("The winner", Weapon.AXE);
         Soldier loser = new Soldier("The loser");
 
-        Soldier actual = winner.attack(loser);
+        Soldier actual = winner.fight(loser);
 
         Assertions.assertThat(actual).isEqualTo(winner);
+
+    }
+
+    @Test
+    void attack_given2SoldiersWithEqualDamage_thenAttackerWins() {
+        Soldier attacker = new Soldier("The winner");
+        Soldier soldier = new Soldier("The loser");
+
+        Soldier actual = attacker.fight(soldier);
+
+        Assertions.assertThat(actual).isEqualTo(attacker);
 
     }
 
