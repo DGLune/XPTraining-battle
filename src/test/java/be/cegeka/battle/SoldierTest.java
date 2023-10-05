@@ -63,7 +63,21 @@ class SoldierTest {
         Soldier actual = attacker.fight(soldier);
 
         Assertions.assertThat(actual).isEqualTo(attacker);
-
     }
 
+
+    @Test
+    void army_givenAnArmyWithSoldiers_thenTheFirstOneIsTheFrontMan() {
+        Army army = new Army();
+        Soldier frontSoldier = new Soldier("The front soldier");
+        army.enlistSoldier(frontSoldier);
+        army.enlistSoldier(new Soldier("Soldier 2"));
+        army.enlistSoldier(new Soldier("Soldier 3"));
+        army.enlistSoldier(new Soldier("Soldier 1"));
+
+        Soldier actual = army.getFrontMan();
+
+        Assertions.assertThat(actual).isEqualTo(frontSoldier);
+
+    }
 }
