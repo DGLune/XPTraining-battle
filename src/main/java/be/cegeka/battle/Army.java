@@ -1,11 +1,21 @@
 package be.cegeka.battle;
 
-public class Army {
-    public void enlistSoldier(Soldier frontSoldier) {
+import java.util.ArrayList;
+import java.util.List;
 
+public class Army {
+    private List<Soldier> soldiers;
+
+    public Army(Soldier frontSoldier) {
+        soldiers = new ArrayList<>();
+        soldiers.add(frontSoldier);
+    }
+
+    public void enlistSoldier(Soldier soldier) {
+        soldiers.add(soldier);
     }
 
     public Soldier getFrontMan() {
-        return null;
+        return soldiers.get(0);
     }
 }
